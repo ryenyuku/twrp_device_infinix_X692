@@ -1,0 +1,62 @@
+# This workflow script is taken from https://raw.githubusercontent.com/Area69Lab/Recovery-Builder-NoKernel/master/.github/workflows/recovery.yml
+name: Building recovery
+
+on:
+#  release:
+#    types: [published]
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: [started]
+
+env:
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+  MANIFEST_BRANCH: twrp-11
+  DEVICE: X692
+  DT_LINK: https://github.com/ryenyuku/twrp_device_infinix_x692
+  DT_PATH: device/infinix/X692
+  TARGET: recoveryimage
+  TZ: Asia/Jakarta
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+         
+
+       - name: Initializing environment
+         run: |
+            git config --global user.name "ryenyuku"
+            git config --global user.email "teamworks1732@gmail.com"
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
+            sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+            sudo chmod a+rx /usr/local/bin/repo
+            
+       - name: Sync recovery source and device tree
+         run: |
+             mkdir work
+             cd work
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             repo sync -j4
+             git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+             
+       - name: Build
+         run: |
+              cd work
+              export ALLOW_MISSING_DEPENDENCIES=true
+              . build/envsetup.sh; lunch twrp_$DEVICE-eng; mka $TARGET
+             
+       - name: Upload recovery image
+         run: |
+              cd work/out/target/product/$DEVICE
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wet recovery.img
