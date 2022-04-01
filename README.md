@@ -7,37 +7,37 @@
 Current state of features (from [here](https://twrp.me/faq/OfficialMaintainer.html)):
 
 Blocking checks
-- [X] Correct screen/recovery size
-- [X] Working Touch, screen (partial, offset touch screen)
+- [ ] Correct screen/recovery size
+- [ ] Working Touch, screen (partial, offset touch screen)
 - [X] Backup to internal/microSD
 - [X] Restore from internal/microSD
 - [X] reboot to system
-- [ ] ADB
+- [X] ADB
 
 
 
 Medium checks
-- [ ] update.zip sideload
+- [X] update.zip sideload
 - [X] UI colors (red/blue inversions)
 - [X] Screen goes off and on
 - [X] F2FS/EXT4 Support, exFAT/NTFS where supported
 - [X] all important partitions listed in mount/backup lists
 - [ ] backup/restore to/from external (USB-OTG) storage (not tested)
-- [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
+- [X] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
 - [X] decrypt /data
 - [X] Correct date
 
 
 Minor checks
-- [ ] MTP export
+- [X] MTP export
 - [X] reboot to bootloader
 - [X] reboot to recovery
 - [X] poweroff
 - [X] battery level
 - [X] temperature
-- [ ] encrypted backups
+- [X] encrypted backups
 - [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not tested)
-- [ ] USB mass storage export
+- [X] USB mass storage export
 - [X] set brightness
 - [X] vibrate
 - [X] screenshot
