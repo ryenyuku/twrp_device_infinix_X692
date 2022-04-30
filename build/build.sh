@@ -30,9 +30,7 @@ function beginBuild {
   git clone $DT_LINK --depth=1 --single-branch $DT_PATH
 
   echo -e "\n\033[0;32mBuilding..\033[0m"
-  source build/envsetup.sh
-  lunch twrp_$DEVICE-eng
-  mka $TARGET
+  . build/envsetup.sh; lunch twrp_$DEVICE-eng; mka $TARGET
 
   echo -e "\n\033[0;32mCopying generated recovery image..\033[0m"
   cd ..
