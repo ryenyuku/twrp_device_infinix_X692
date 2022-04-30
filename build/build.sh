@@ -35,12 +35,15 @@ function beginBuild {
   mka $TARGET
 
   echo -e "\n\033[0;32mCopying generated recovery image..\033[0m"
-  cp -v out/target/product/$DEVICE/recovery.img .
+  cd ..
+  rm -f recovery.img
+  cp -v output/out/target/product/$DEVICE/recovery.img .
 
   echo -e "\n\033[0;32mGenerating checksums..\033[0m"
-  sha1sum --tag recovery.img >> ../checksums
-  sha256sum --tag recovery.img >> ../checksums
-  md5sum --tag recovery.img >> ../checksums
+  rm -f checksums
+  sha1sum --tag recovery.img >> checksums
+  sha256sum --tag recovery.img >> checksums
+  md5sum --tag recovery.img >> checksums
 }
 
 echo -e "\033[1;33mWARNING:\033[0m Building TWRP is network expensive and you must have at least 60GiB of free storage space"
