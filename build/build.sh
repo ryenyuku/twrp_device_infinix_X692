@@ -6,7 +6,6 @@ function importEnv {
   DT_LINK="https://github.com/ryenyuku/twrp_device_infinix_x692.git"
   DT_PATH="device/infinix/X692"
   TARGET="recoveryimage"
-  export ALLOW_MISSING_DEPENDENCIES=true
 }
 
 function beginBuild {
@@ -19,7 +18,6 @@ function beginBuild {
   echo -e "\033[0;36mDEVICE: \033[0;37m$DEVICE\033[0m"
   echo -e "\033[0;36mDT_LINK: \033[0;37m$DT_LINK\033[0m"
   echo -e "\033[0;36mDT_PATH: \033[0;37m$DT_PATH\033[0m"
-  echo -e "\033[0;36mALLOW_MISSING_DEPENDENCIES: \033[0;37m$ALLOW_MISSING_DEPENDENCIES\033[0m"
 
   mkdir -p $BUILDPATH
   cd $BUILDPATH
@@ -30,6 +28,7 @@ function beginBuild {
   git clone $DT_LINK --depth=1 --single-branch $DT_PATH
 
   echo -e "\n\033[0;32mBuilding..\033[0m"
+  export ALLOW_MISSING_DEPENDENCIES=true
   . build/envsetup.sh; lunch twrp_$DEVICE-eng; mka $TARGET
 
   echo -e "\n\033[0;32mCopying generated recovery image..\033[0m"
