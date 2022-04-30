@@ -1,14 +1,12 @@
 # TWRP device tree for Infinix Note 8 (X692)
 
-**WARNING: This port is still in testing phase**
-
 ## Status
 
 Current state of features (from [here](https://twrp.me/faq/OfficialMaintainer.html)):
 
 Blocking checks
-- [ ] Correct screen/recovery size
-- [ ] Working Touch, screen (partial, offset touch screen)
+- [X] Correct screen/recovery size
+- [X] Working Touch, screen
 - [X] Backup to internal/microSD
 - [X] Restore from internal/microSD
 - [X] reboot to system
@@ -45,4 +43,21 @@ Minor checks
 
 ## Building
 
-Instruction is coming soon
+### Requirements:
+- A GNU or GNU/Linux system (other non-GNU systems aren't guaranteed to work)
+- At least 60GiB of free storage space
+- Non-metered internet connection
+
+### Steps:
+
+#### Install all of the required dependencies 
+
+  - Ubuntu
+  ```
+  sudo apt install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison aria2
+  ```
+
+#### Build with script
+```
+build/build.sh
+```
