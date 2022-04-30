@@ -52,7 +52,7 @@ Minor checks
 
 #### Install all of the required dependencies 
 
-  - Ubuntu
+  - Debian/Ubuntu
   ```
   sudo apt install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison aria2
   ```
