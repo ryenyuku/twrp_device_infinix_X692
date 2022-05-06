@@ -54,7 +54,7 @@ Minor checks
 
   - Debian/Ubuntu
   ```
-  sudo apt install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison aria2
+  sudo apt install bc build-essential zip curl libstdc++6 git wget python3 python-is-python3 gcc clang libssl-dev repo rsync flex bison aria2
   ```
 
 #### Build with script
