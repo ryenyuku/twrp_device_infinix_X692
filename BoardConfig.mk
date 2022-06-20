@@ -16,6 +16,9 @@
 # limitations under the License.
 #
 
+# Allow building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
 DEVICE_PATH := device/infinix/X692
 
 # Architecture
@@ -30,9 +33,6 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
-TARGET_BOARD_SUFFIX := _64
-
-TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := CY-X692-H694-J
