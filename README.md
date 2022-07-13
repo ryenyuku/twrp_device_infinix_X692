@@ -59,7 +59,7 @@ Minor checks
 
 #### Clone the repository and build with automated script
 ```
-git clone https://github.com/ryenyuku/twrp_infx692_buildscripts.git
+git clone https://github.com/ThatCakeID/twrp_infx692_buildscripts.git
 cd twrp_infx692_buildscripts
 build/build.sh
 ```
