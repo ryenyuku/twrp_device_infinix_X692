@@ -16,6 +16,9 @@
 # limitations under the License.
 #
 
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
 DEVICE_PATH := device/infinix/X692
 
 # Architecture
