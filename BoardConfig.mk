@@ -16,9 +16,6 @@
 # limitations under the License.
 #
 
-# Allow building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
-
 DEVICE_PATH := device/infinix/X692
 
 # Architecture
@@ -95,6 +92,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Allow LZ4 compression
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Workaround for copying error vendor files to recovery ramdisk
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
@@ -144,7 +144,6 @@ TW_MAX_BRIGHTNESS := 4095
 TW_DEFAULT_BRIGHTNESS := 2000
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_INCLUDE_NTFS_3G := false
 TW_Y_OFFSET := 100
 TW_H_OFFSET := -100
 DEVICE_SCREEN_WIDTH := 720
@@ -155,6 +154,3 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 BOARD_USES_MTK_HARDWARE := true
-
-# Exclude the app to save space, sorry
-TW_EXCLUDE_TWRP_APP := true
