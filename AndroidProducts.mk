@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_X692.mk
+    $(LOCAL_DIR)/twrp_X657C.mk
