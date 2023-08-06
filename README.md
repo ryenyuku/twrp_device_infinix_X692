@@ -1,4 +1,4 @@
-# TWRP device tree for Infinix Note 8 (X692)
+# TWRP device tree for Infinix Smart 5 (X657C)
 
 ## Status
 
@@ -56,10 +56,3 @@ Minor checks
   ```
   sudo apt install bc build-essential zip curl libstdc++6 git wget python3 python-is-python3 gcc clang libssl-dev repo rsync flex bison aria2
   ```
-
-#### Clone the repository and build with automated script
-```
-git clone https://github.com/ryenyuku/twrp_infx692_buildscripts.git
-cd twrp_infx692_buildscripts
-build/build.sh
-```
