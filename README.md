@@ -1,3 +1,6 @@
+# WARNING
+This device tree is no longer maintained as I have another device. Please do not ask for any updates on this build.
+
 # TWRP device tree for Infinix Note 8 (X692)
 
 ## Status
